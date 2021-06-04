@@ -33,29 +33,31 @@ export default function Home() {
         <div className="section-icon-landing">
           <MariachiIconTromp style={{ width: "100px" }} />
         </div>
-        <div className="section-text-landing">
-          <p>Contrata de manera rápida y segura el mariachi de tu confianza.</p>
+        <div className="section-icon-landing">
+          <p className="section-text-landing">
+            Contrata de manera rápida y segura el mariachi de tu confianza.
+          </p>
         </div>
         <div className="section-icon-landing">
           <PaymentIcon style={{ width: "100px" }} />
         </div>
-        <div className="section-text-landing">
-          <p>Formas de pago</p>
+        <div className="section-icon-landing">
+          <p className="section-text-landing">Formas de pago</p>
         </div>
         <div className="section-icon-landing">
           <LocationIcon style={{ width: "100px" }} />
         </div>
-        <div className="section-text-landing">
-          <p>Formas de pago</p>
+        <div className="section-icon-landing">
+          <p className="section-text-landing">Formas de pago</p>
         </div>
-      </div>
-      <div className="footer-text-landing">
-        <Image
-          src="/mariachonlogo.png"
-          alt="Mariachon Logo"
-          width={273}
-          height={159}
-        />
+        <div className="footer-text-landing">
+          <img
+            src="/mariachonlogo.png"
+            alt="Mariachon Logo"
+            width={273}
+            height={159}
+          />
+        </div>
       </div>
       <style jsx>{`
         .landing-container {
@@ -63,6 +65,7 @@ export default function Home() {
           flex-direction: column;
           justify-content: space-around;
           align-items: center;
+          flex-wrap: wrap;
         }
         .landing-header {
           display: flex;
@@ -102,6 +105,9 @@ export default function Home() {
           align-items: center;
           justify-content: center;
           height: 30vh;
+          text-align: center;
+          padding-left: 10vh;
+          padding-right: 10vh;
         }
         .image-landing {
           width: 100%;
@@ -123,6 +129,7 @@ export default function Home() {
         .section-icon-landing {
           width: 16.6%;
           height: 100%;
+          min-width: 28vh;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -134,7 +141,7 @@ export default function Home() {
           align-items: center;
           padding-left: 4vh;
           padding-right: 4vh;
-          width: 16.6%;
+          width: 100%;
           height: 100%;
           background-color: rgba(7, 0, 55, 1);
           color: #fff;
@@ -149,8 +156,9 @@ export default function Home() {
           justify-content: flex-end; /* Pack flex items from the end */
           width: 100%;
           padding-right: 10vh;
-          height: 40vh;
+          min-height: 40vh;
           background-color: rgba(255, 255, 255, 0.8);
+          flex-wrap: wrap;
         }
       `}</style>
     </div>
