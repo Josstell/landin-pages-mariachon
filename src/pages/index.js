@@ -130,6 +130,7 @@ export default function Home() {
           width: 16.6%;
           height: 100%;
           min-width: 28vh;
+          padding-top: 5vh;
           display: flex;
           justify-content: center;
           align-items: center;
