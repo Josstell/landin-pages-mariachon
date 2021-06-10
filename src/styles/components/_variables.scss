@@ -1,0 +1,9 @@
+$color-text-clear: rgb(240, 240, 240);
+$background-text: rgba(7, 0, 55, 4);
+$rojo-btn: rgba(204, 0, 4, 1);
+$image-header: "../../../public/mariachis.png";
+$image-content: "../../../public/mariachisenmexico.png";
+
+@function get-opacity($color, $nivel) {
+  @return rgba($color, $nivel);
+}

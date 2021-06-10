@@ -1,0 +1,10 @@
+.footer_image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Pack flex items from the end */
+  flex-wrap: wrap;
+  width: 100%;
+  padding-right: 10vh;
+  min-height: 40vh;
+  background-color: get-opacity($color-text-clear, 0.8);
+}

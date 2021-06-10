@@ -8,49 +8,59 @@ import {
 
 export default function Home() {
   return (
-    <div className="landing-container">
+    <div className="container">
       <Head>
         <title>Mariachon</title>
         <meta name="Mariachon" content="Pagina de aterrizaje de mariachon" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="landing-header">
-        <div className="logo-header">
-          <Image
-            src="/mariachonlogo.png"
-            alt="Mariachon Logo"
-            width={135}
-            height={75}
-          />
+      <main>
+        <div
+          className="header"
+          style={{ backgroundImage: `url("/mariachis.png")` }}
+        >
+          <div className="header__logo">
+            <Image
+              src="/mariachonlogo.png"
+              alt="Mariachon Logo"
+              width={135}
+              height={75}
+            />
+          </div>
+          <button>Informes</button>
         </div>
-        <button>Informes</button>
-      </div>
-      <div className="first-text-landing">
+      </main>
+
+      <div className="text">
         <h3>Conoce a la comunidad de mariachis más grande del mundo.</h3>
       </div>
-      <div className="image-landing"></div>
-      <div className="details-landing">
-        <div className="section-icon-landing">
+      <div
+        className="imageRow"
+        style={{ backgroundImage: `url("/mariachisenmexico.png")` }}
+      ></div>
+
+      <div className="details">
+        <div className="details__section_icon">
           <MariachiIconTromp style={{ width: "100px" }} />
         </div>
-        <div className="section-icon-landing">
-          <p className="section-text-landing">
+        <div className="details__section_icon">
+          <p className="details__section_icon__section_text">
             Contrata de manera rápida y segura el mariachi de tu confianza.
           </p>
         </div>
-        <div className="section-icon-landing">
+        <div className="details__section_icon">
           <PaymentIcon style={{ width: "100px" }} />
         </div>
-        <div className="section-icon-landing">
-          <p className="section-text-landing">Formas de pago</p>
+        <div className="details__section_icon">
+          <p className="details__section_icon__section_text">Formas de pago</p>
         </div>
-        <div className="section-icon-landing">
+        <div className="details__section_icon">
           <LocationIcon style={{ width: "100px" }} />
         </div>
-        <div className="section-icon-landing">
-          <p className="section-text-landing">Formas de pago</p>
+        <div className="details__section_icon">
+          <p className="details__section_icon__section_text">Formas de pago</p>
         </div>
-        <div className="footer-text-landing">
+        <div className="footer_image">
           <img
             src="/mariachonlogo.png"
             alt="Mariachon Logo"
@@ -59,109 +69,6 @@ export default function Home() {
           />
         </div>
       </div>
-      <style jsx>{`
-        .landing-container {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          align-items: center;
-          flex-wrap: wrap;
-        }
-        .landing-header {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          align-items: center;
-          width: 100%;
-          height: 100vh;
-          border: 1px solid #000;
-          background-image: url("mariachis.png");
-          background-position: center; /* Center the image */
-          background-repeat: no-repeat; /* Do not repeat the image */
-          background-size: cover;
-        }
-        .logo-header {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-top: -10vh;
-          width: 100%;
-          height: 25vh;
-          background-color: rgba(255, 255, 255, 0.8);
-        }
-
-        button {
-          width: 25vh;
-          height: 7vh;
-          border-radius: 30px;
-          background-color: rgba(204, 0, 4, 1);
-          color: #fff;
-          font-size: 20px;
-          font-weight: bold;
-          border: none;
-        }
-        .first-text-landing {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 30vh;
-          text-align: center;
-          padding-left: 10vh;
-          padding-right: 10vh;
-        }
-        .image-landing {
-          width: 100%;
-          height: 77vh;
-          background-image: url("mariachisenmexico.png");
-          background-position: center; /* Center the image */
-          background-repeat: no-repeat; /* Do not repeat the image */
-          background-size: cover;
-        }
-        .details-landing {
-          width: 100%;
-          height: 20vh;
-          border: 1 solid #000;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-        }
-        .section-icon-landing {
-          width: 16.6%;
-          height: 100%;
-          min-width: 28vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: rgba(240, 240, 240, 0.8);
-        }
-        .section-text-landing {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding-left: 4vh;
-          padding-right: 4vh;
-          margin-top: -5vh;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(7, 0, 55, 1);
-          color: #fff;
-          text-align: center;
-        }
-        .icon-size-landing {
-          width: 50px;
-        }
-        .footer-text-landing {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end; /* Pack flex items from the end */
-          width: 100%;
-          padding-right: 10vh;
-          min-height: 40vh;
-          background-color: rgba(255, 255, 255, 0.8);
-          flex-wrap: wrap;
-        }
-      `}</style>
     </div>
   )
 }

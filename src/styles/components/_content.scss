@@ -1,0 +1,50 @@
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  text-align: center;
+  padding-left: 10vh;
+  padding-right: 10vh;
+}
+
+.imageRow {
+  width: 100%;
+  height: 77vh;
+  /* background-image: url($image-content);*/
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.details {
+  width: 100%;
+  height: 20vh;
+  border: 1 solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  &__section_icon {
+    width: 16.6%;
+    height: 100%;
+    min-width: 28vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: get-opacity($color-text-clear, 0.8);
+    &__section_text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 4vh;
+      padding-right: 4vh;
+      margin-top: -5vh;
+      width: 100%;
+      height: 100%;
+      background-color: $background-text;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
