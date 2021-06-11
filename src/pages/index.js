@@ -5,8 +5,10 @@ import {
   MariachiIconTromp,
   PaymentIcon,
 } from "../components/IconsSvg"
+import { estados } from "@helpers/estados"
 
-export default function Home() {
+export default function Home({ data }) {
+  console.log(data)
   return (
     <div className="container">
       <Head>
@@ -71,4 +73,10 @@ export default function Home() {
       </div>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: { data: estados }, // will be passed to the page component as props
+  }
 }
