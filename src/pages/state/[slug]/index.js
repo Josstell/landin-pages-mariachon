@@ -1,5 +1,5 @@
 import Head from "next/head"
-import useRouter from "next/router"
+import { useRouter } from "next/router"
 import HeaderSass from "@components/Header/HeaderSass"
 import ContentSass from "@components/Content/ContentSass"
 
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   }))
   console.log("paths: ", paths)
 
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }) {
