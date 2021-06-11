@@ -14,8 +14,8 @@ const index = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={792.418}
-      height={497.543}
+      width={"100%"}
+      height={"100%"}
       {...props}
     >
       <Tooltip title="Aguascalientes">

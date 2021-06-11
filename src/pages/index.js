@@ -32,7 +32,16 @@ export default function Home({ data, stateArrayNames }) {
           <button>Informes</button>
         </div>
       </main>
-      <div style={{ marginTop: 50 }}>
+      <div
+        style={{
+          display: "flex",
+          flex: 1,
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 50,
+        }}
+      >
         <Map regions={stateArrayNames} />
       </div>
 
@@ -86,7 +95,7 @@ export async function getStaticProps() {
     props: {
       data: estados,
       stateArrayNames: stateNames.reduce(function (result, item) {
-        const key = Object.keys(item)[0] // first property: a, b, c
+        const key = Object.keys(item)[0]
         result[key] = item[key]
         return result
       }, {}),
