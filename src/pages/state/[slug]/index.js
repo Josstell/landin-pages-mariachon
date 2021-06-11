@@ -32,7 +32,6 @@ export async function getStaticPaths() {
   const paths = await estados.map((path) => ({
     params: { slug: path.slug.toString() },
   }))
-  console.log("paths: ", paths)
 
   return { paths, fallback: false }
 }

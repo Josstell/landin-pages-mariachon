@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Image from "next/image"
+import Map from "@components/Maps/Map"
 import {
   LocationIcon,
   MariachiIconTromp,
@@ -7,8 +8,7 @@ import {
 } from "../components/IconsSvg"
 import { estados } from "@helpers/estados"
 
-export default function Home({ data }) {
-  console.log(data)
+export default function Home({ data, stateArrayNames }) {
   return (
     <div className="container">
       <Head>
@@ -32,6 +32,9 @@ export default function Home({ data }) {
           <button>Informes</button>
         </div>
       </main>
+      <div style={{ marginTop: 50 }}>
+        <Map regions={stateArrayNames} />
+      </div>
 
       <div className="text">
         <h3>Conoce a la comunidad de mariachis más grande del mundo.</h3>
@@ -76,7 +79,17 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
+  const stateNames = []
+  estados.forEach((sta) => stateNames.push({ [sta.slug]: sta.slug }))
+
   return {
-    props: { data: estados }, // will be passed to the page component as props
+    props: {
+      data: estados,
+      stateArrayNames: stateNames.reduce(function (result, item) {
+        const key = Object.keys(item)[0] // first property: a, b, c
+        result[key] = item[key]
+        return result
+      }, {}),
+    }, // will be passed to the page component as props
   }
 }
