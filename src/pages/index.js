@@ -10,8 +10,9 @@ import {
 } from "../components/IconsSvg"
 import { estados } from "@helpers/estados"
 
-export default function Home({ data, stateArrayNames }) {
+export default function Home({ stateArrayNames }) {
   const size = useWindowSize()
+  console.log(size.width)
 
   return (
     <div className="container">
@@ -37,10 +38,11 @@ export default function Home({ data, stateArrayNames }) {
         </div>
       </main>
 
-      {size.width > 800 && <Map regions={stateArrayNames} />}
-      {size.width < 800 && <MapTwo />}
+      {size.width > 800 ? <Map regions={stateArrayNames} /> : <MapTwo />}
       <div className="text">
-        <h3>Conoce a la comunidad de mariachis más grande del mundo.</h3>
+        <h3>
+          {size.width} Conoce a la comunidad de mariachis más grande del mundo.
+        </h3>
       </div>
       <div
         className="imageRow"
