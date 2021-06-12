@@ -11,11 +11,13 @@ const index = (props) => {
     router.push(`/state/${region}`)
   }
 
+  // width={792.418}
+  //  height={497.543}
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={792.418}
-      height={497.543}
+      width={"100vh"}
+      height={"62vh"}
       {...props}
     >
       <Tooltip title="Aguascalientes">

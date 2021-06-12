@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react"
 import Head from "next/head"
 import Image from "next/image"
 import Map from "@components/Maps/Map"
+import MapTwo from "@components/Maps/MapTwo"
 import {
   LocationIcon,
   MariachiIconTromp,
@@ -9,6 +11,8 @@ import {
 import { estados } from "@helpers/estados"
 
 export default function Home({ data, stateArrayNames }) {
+  const size = useWindowSize()
+
   return (
     <div className="container">
       <Head>
@@ -32,19 +36,9 @@ export default function Home({ data, stateArrayNames }) {
           <button>Informes</button>
         </div>
       </main>
-      <div
-        style={{
-          display: "flex",
-          flex: 1,
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 50,
-        }}
-      >
-        <Map regions={stateArrayNames} />
-      </div>
 
+      {size.width > 800 && <Map regions={stateArrayNames} />}
+      {size.width < 800 && <MapTwo />}
       <div className="text">
         <h3>Conoce a la comunidad de mariachis más grande del mundo.</h3>
       </div>
@@ -83,6 +77,22 @@ export default function Home({ data, stateArrayNames }) {
           />
         </div>
       </div>
+      <style jsx>{`
+        .parent {
+          overflow: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          margin-top: 50;
+          height: 20%;
+          visibility: visible;
+        }
+
+        main {
+          margin-bottom: 20px;
+        }
+      `}</style>
     </div>
   )
 }
@@ -101,4 +111,31 @@ export async function getStaticProps() {
       }, {}),
     }, // will be passed to the page component as props
   }
+}
+
+// Hook
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  })
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+    // Add event listener
+    window.addEventListener("resize", handleResize)
+    // Call handler right away so state gets updated with initial window size
+    handleResize()
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize)
+  }, []) // Empty array ensures that effect is only run on mount
+  return windowSize
 }
