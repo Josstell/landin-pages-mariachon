@@ -2,6 +2,7 @@ import Image from "next/image"
 import ButtonSass from "@components/Buttons/ButtonSass"
 
 const HeaderSass = ({ state }) => {
+  console.log("estoy aqui", state)
   return (
     <main>
       <div
@@ -20,7 +21,7 @@ const HeaderSass = ({ state }) => {
             height={75}
           />
         </div>
-        <ButtonSass text="Informes" />
+        <ButtonSass text="Informes" region={state.state} />
       </div>
     </main>
   )

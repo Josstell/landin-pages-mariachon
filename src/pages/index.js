@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import Head from "next/head"
 import Image from "next/image"
 import Map from "@components/Maps/Map"
+import ButtonSass from "@components/Buttons/ButtonSass"
+
 import {
   LocationIcon,
   MariachiIconTromp,
@@ -40,7 +42,8 @@ export default function Home({ stateArrayNames }) {
               height={75}
             />
           </div>
-          <button>Informes</button>
+
+          <ButtonSass text="Informes" region={stateArrayNames.inicio} />
         </div>
       </main>
       <div>
