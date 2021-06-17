@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import Head from "next/head"
 import Image from "next/image"
 import Map from "@components/Maps/Map"
-import MapTwo from "@components/Maps/MapTwo"
 import {
   LocationIcon,
   MariachiIconTromp,
@@ -12,7 +11,14 @@ import { estados } from "@helpers/estados"
 
 export default function Home({ stateArrayNames }) {
   const size = useWindowSize()
-  console.log(size.width)
+  console.log("Estados : ", stateArrayNames)
+  let escalar = "scale(1)"
+
+  if (size.width < 800) {
+    escalar = "scale(.5)"
+  } else {
+    escalar = "scale(1)"
+  }
 
   return (
     <div className="container">
@@ -37,12 +43,12 @@ export default function Home({ stateArrayNames }) {
           <button>Informes</button>
         </div>
       </main>
+      <div>
+        <Map regions={stateArrayNames} style={{ transform: `${escalar}` }} />
+      </div>
 
-      {size.width > 800 ? <Map regions={stateArrayNames} /> : <MapTwo />}
       <div className="text">
-        <h3>
-          {size.width} Conoce a la comunidad de mariachis más grande del mundo.
-        </h3>
+        <h3>Conoce a la comunidad de mariachis más grande del mundo.</h3>
       </div>
       <div
         className="imageRow"
@@ -93,6 +99,9 @@ export default function Home({ stateArrayNames }) {
 
         main {
           margin-bottom: 20px;
+        }
+        .mapScale {
+          transform: scale(0.4722);
         }
       `}</style>
     </div>
