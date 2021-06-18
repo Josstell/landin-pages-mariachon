@@ -1,6 +1,6 @@
 import Image from "next/image"
 import ButtonSass from "@components/Buttons/ButtonSass"
-import { imageInicioFullUrl, shimmer, toBase64 } from "@helpers/index.js"
+import { imageInicioFullUrl } from "@helpers/index.js"
 
 const HeaderSass = ({ state }) => {
   console.log("estoy aqui", state)
@@ -12,9 +12,6 @@ const HeaderSass = ({ state }) => {
           src={state.images?.header ? state.images.header : ""}
           alt="Mariachon inicio"
           placeholder="blur"
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(
-            shimmer(700, 475)
-          )}`}
           layout="fill"
           objectFit="cover"
           quality={80}
@@ -24,9 +21,6 @@ const HeaderSass = ({ state }) => {
             src="/mariachonlogo.png"
             alt="Mariachon Logo"
             placeholder="blur"
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              shimmer(135, 75)
-            )}`}
             width={135}
             height={75}
           />

@@ -4,7 +4,7 @@ import Image from "next/image"
 import Map from "@components/Maps/Map"
 import ButtonSass from "@components/Buttons/ButtonSass"
 
-import { imageInicio, shimmer, toBase64 } from "@helpers/index.js"
+import { imageInicio } from "@helpers/index.js"
 
 import {
   LocationIcon,
@@ -45,9 +45,6 @@ export default function Home({ stateArrayNames }) {
             src={imagen}
             alt="Mariachon inicio"
             placeholder="blur"
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              shimmer(700, 475)
-            )}`}
             layout="fill"
             objectFit="cover"
             quality={80}
@@ -57,9 +54,6 @@ export default function Home({ stateArrayNames }) {
               src="/mariachonlogo.png"
               alt="Mariachon Logo"
               placeholder="blur"
-              blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                shimmer(135, 75)
-              )}`}
               width={135}
               height={75}
               quality={75}
@@ -83,9 +77,6 @@ export default function Home({ stateArrayNames }) {
           alt="Mariachon inicio"
           layout="responsive"
           placeholder="blur"
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(
-            shimmer(1024, 430)
-          )}`}
           width={1024}
           height={430}
           quality={70}
