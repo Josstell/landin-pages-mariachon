@@ -1,5 +1,4 @@
 const Button = ({ text, region }) => {
-  console.log("button", region)
   const handleEnviarWhats = (e) => {
     e.preventDefault()
     // const sl = "%0A"

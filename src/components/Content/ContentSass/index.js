@@ -1,4 +1,6 @@
+import Image from "next/image"
 import { LocationIcon, MariachiIconTromp, PaymentIcon } from "../../IconsSvg"
+import { imageInicioFullUrl, shimmer, toBase64 } from "@helpers/index.js"
 
 const ContentSass = ({ state }) => {
   return (
@@ -6,10 +8,21 @@ const ContentSass = ({ state }) => {
       <div className="text">
         <h3>{state.text1}</h3>
       </div>
-      <div
-        className="imageRow"
-        style={{ backgroundImage: `url(${state.images?.content[0]})` }}
-      ></div>
+      <div className="imageRow">
+        <Image
+          loader={imageInicioFullUrl}
+          src={state.images?.content[0]}
+          alt="Mariachon inicio"
+          layout="responsive"
+          placeholder="blur"
+          blurDataURL={`data:image/svg+xml;base64,${toBase64(
+            shimmer(1024, 430)
+          )}`}
+          width={1024}
+          height={430}
+          quality={80}
+        />
+      </div>
 
       <div className="details">
         <div className="details__section_icon">

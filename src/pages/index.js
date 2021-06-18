@@ -4,12 +4,17 @@ import Image from "next/image"
 import Map from "@components/Maps/Map"
 import ButtonSass from "@components/Buttons/ButtonSass"
 
+import { imageInicio, shimmer, toBase64 } from "@helpers/index.js"
+
 import {
   LocationIcon,
   MariachiIconTromp,
   PaymentIcon,
 } from "../components/IconsSvg"
 import { estados } from "@helpers/estados"
+
+const imagen = "1fQxdX_0Rkv6Cm3jCLOpEC5TrzoCmEtmY"
+const imageSection = "1Hej2AAup_tbHCKfg16zq657s1-qKaDQ-"
 
 export default function Home({ stateArrayNames }) {
   const size = useWindowSize()
@@ -22,6 +27,10 @@ export default function Home({ stateArrayNames }) {
     escalar = "scale(1)"
   }
 
+  // const imageInicio = ({ src }) => {
+  //   return `https://drive.google.com/uc?id=${src}`
+  // }
+
   return (
     <div className="container">
       <Head>
@@ -30,16 +39,27 @@ export default function Home({ stateArrayNames }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div
-          className="header"
-          style={{ backgroundImage: `url("/mariachis.png")` }}
-        >
+        <div className="header">
+          <Image
+            loader={imageInicio}
+            src={imagen}
+            alt="Mariachon inicio"
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+              shimmer(700, 475)
+            )}`}
+            layout="fill"
+            objectFit="cover"
+            quality={80}
+          />
           <div className="header__logo">
             <Image
               src="/mariachonlogo.png"
               alt="Mariachon Logo"
               width={135}
               height={75}
+              quality={70}
+              placeholder="blur"
             />
           </div>
 
@@ -53,10 +73,21 @@ export default function Home({ stateArrayNames }) {
       <div className="text">
         <h3>Conoce a la comunidad de mariachis más grande del mundo.</h3>
       </div>
-      <div
-        className="imageRow"
-        style={{ backgroundImage: `url("/mariachisenmexico.png")` }}
-      ></div>
+      <div className="imageRow">
+        <Image
+          loader={imageInicio}
+          src={imageSection}
+          alt="Mariachon inicio"
+          layout="responsive"
+          placeholder="blur"
+          blurDataURL={`data:image/svg+xml;base64,${toBase64(
+            shimmer(1024, 430)
+          )}`}
+          width={1024}
+          height={430}
+          quality={70}
+        />
+      </div>
 
       <div className="details">
         <div className="details__section_icon">
