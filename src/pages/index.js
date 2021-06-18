@@ -44,7 +44,6 @@ export default function Home({ stateArrayNames }) {
             loader={imageInicio}
             src={imagen}
             alt="Mariachon inicio"
-            placeholder="blur"
             layout="fill"
             objectFit="cover"
             quality={80}
