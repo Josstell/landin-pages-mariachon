@@ -56,10 +56,13 @@ export default function Home({ stateArrayNames }) {
             <Image
               src="/mariachonlogo.png"
               alt="Mariachon Logo"
+              placeholder="blur"
+              blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                shimmer(135, 75)
+              )}`}
               width={135}
               height={75}
-              quality={70}
-              placeholder="blur"
+              quality={75}
             />
           </div>
 

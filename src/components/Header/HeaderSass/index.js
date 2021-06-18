@@ -23,6 +23,10 @@ const HeaderSass = ({ state }) => {
           <Image
             src="/mariachonlogo.png"
             alt="Mariachon Logo"
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+              shimmer(135, 75)
+            )}`}
             width={135}
             height={75}
           />
