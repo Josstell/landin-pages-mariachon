@@ -4,7 +4,7 @@ import Image from "next/image"
 import Map from "@components/Maps/Map"
 import ButtonSass from "@components/Buttons/ButtonSass"
 
-import { imageInicio } from "@helpers/index.js"
+import { shimmer, toBase64 } from "@helpers/index.js"
 
 import {
   LocationIcon,
@@ -13,8 +13,8 @@ import {
 } from "../components/IconsSvg"
 import { estados } from "@helpers/estados"
 
-const imagen = "1fQxdX_0Rkv6Cm3jCLOpEC5TrzoCmEtmY"
-const imageSection = "1Hej2AAup_tbHCKfg16zq657s1-qKaDQ-"
+// const imagen = "1fQxdX_0Rkv6Cm3jCLOpEC5TrzoCmEtmY"
+// const imageSection = "1Hej2AAup_tbHCKfg16zq657s1-qKaDQ-"
 
 export default function Home({ stateArrayNames }) {
   const size = useWindowSize()
@@ -41,11 +41,12 @@ export default function Home({ stateArrayNames }) {
       <main>
         <div className="header">
           <Image
-            loader={imageInicio}
-            src={imagen}
+            // loader={imageInicio}
+            src="/mariachis.png"
             alt="Mariachon inicio"
             layout="fill"
             objectFit="cover"
+            placeholder="blur"
             quality={80}
           />
           <div className="header__logo">
@@ -71,11 +72,15 @@ export default function Home({ stateArrayNames }) {
       </div>
       <div className="imageRow">
         <Image
-          loader={imageInicio}
-          src={imageSection}
+          // loader={imageInicio}
+          // src={imageSection}
+          src="/mariachisenmexico.png"
           alt="Mariachon inicio"
           layout="responsive"
           placeholder="blur"
+          blurDataURL={`data:image/svg+xml;base64,${toBase64(
+            shimmer(1024, 430)
+          )}`}
           width={1024}
           height={430}
           quality={70}

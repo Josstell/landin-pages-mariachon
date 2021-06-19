@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { LocationIcon, MariachiIconTromp, PaymentIcon } from "../../IconsSvg"
-import { imageInicioFullUrl, shimmer, toBase64 } from "@helpers/index.js"
+import { imageInicioFullUrl } from "@helpers/index.js"
 
 const ContentSass = ({ state }) => {
   return (
@@ -15,9 +15,9 @@ const ContentSass = ({ state }) => {
           alt="Mariachon inicio"
           layout="responsive"
           placeholder="blur"
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(
-            shimmer(1024, 430)
-          )}`}
+          // blurDataURL={`data:image/svg+xml;base64,${toBase64(
+          //   shimmer(1024, 430)
+          // )}`}
           width={1024}
           height={430}
           quality={80}
