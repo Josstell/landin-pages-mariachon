@@ -109,11 +109,12 @@ export default function Home({ stateArrayNames }) {
           <p className="details__section_icon__section_text">Formas de pago</p>
         </div>
         <div className="footer_image">
-          <img
+          <Image
             src="/mariachonlogo.png"
             alt="Mariachon Logo"
-            width={273}
-            height={159}
+            placeholder="blur"
+            width={135}
+            height={75}
           />
         </div>
       </div>

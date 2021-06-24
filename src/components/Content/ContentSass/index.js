@@ -50,11 +50,12 @@ const ContentSass = ({ state }) => {
           </p>
         </div>
         <div className="footer_image">
-          <img
+          <Image
             src="/mariachonlogo.png"
             alt="Mariachon Logo"
-            width={273}
-            height={159}
+            placeholder="blur"
+            width={135}
+            height={75}
           />
         </div>
       </div>
