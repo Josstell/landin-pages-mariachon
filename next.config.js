@@ -6,8 +6,9 @@ module.exports = {
   },
 }
 
-module.exports = {
-  images: {
-    domains: ["drive.google.com/"],
-  },
-}
+// module.exports = {
+//   images: {
+//     loader: "cloudinary",
+//     path: "drive.google.com/",
+//   },
+// }

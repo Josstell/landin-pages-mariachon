@@ -18,7 +18,6 @@ import { estados } from "@helpers/estados"
 
 export default function Home({ stateArrayNames }) {
   const size = useWindowSize()
-  console.log("Estados : ", stateArrayNames)
   let escalar = "scale(1)"
 
   if (size.width < 800) {
@@ -46,14 +45,12 @@ export default function Home({ stateArrayNames }) {
             alt="Mariachon inicio"
             layout="fill"
             objectFit="cover"
-            placeholder="blur"
             quality={80}
           />
           <div className="header__logo">
             <Image
               src="/mariachonlogo.png"
               alt="Mariachon Logo"
-              placeholder="blur"
               width={135}
               height={75}
               quality={75}
