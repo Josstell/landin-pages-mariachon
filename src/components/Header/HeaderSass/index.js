@@ -3,7 +3,6 @@ import ButtonSass from "@components/Buttons/ButtonSass"
 import { imageInicioFullUrl } from "@helpers/index.js"
 
 const HeaderSass = ({ state }) => {
-  console.log("estoy aqui", state)
   return (
     <main>
       <div className="header">
