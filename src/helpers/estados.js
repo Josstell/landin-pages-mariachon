@@ -499,7 +499,7 @@ export const estados = [
   {
     id: 29,
     state: "Matamoros",
-    slug: "Matamoros",
+    slug: "matamoros",
     images: {
       header:
         "https://drive.google.com/uc?id=13mMgTdmq_DecnYWEpO_vhts841A_JCQF",
