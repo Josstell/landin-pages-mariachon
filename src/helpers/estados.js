@@ -479,4 +479,72 @@ export const estados = [
     textPago: "Formas de pago",
     textLocation: "El mariachi más cercano a tu ubicación",
   },
+  {
+    id: 28,
+    state: "Tlaxcala",
+    slug: "tlaxcala",
+    images: {
+      header:
+        "https://drive.google.com/uc?id=1wk0AOuyqhsKUNZ_0LUTl9NaaKK7n8jWb",
+      content: [
+        "https://drive.google.com/uc?id=1Ci1RrXAwq5zJIfP7mvE8Rhy1Z4r1pr-k",
+      ],
+    },
+    text1: "Conoce a la comunidad de mariachis más grande del mundo.",
+    textContrata:
+      "Contrata de manera rápida y segura el mariachi de tu confianza.",
+    textPago: "Formas de pago",
+    textLocation: "El mariachi más cercano a tu ubicación",
+  },
+  {
+    id: 29,
+    state: "Matamoros",
+    slug: "Matamoros",
+    images: {
+      header:
+        "https://drive.google.com/uc?id=13mMgTdmq_DecnYWEpO_vhts841A_JCQF",
+      content: [
+        "https://drive.google.com/uc?id=1ZrQnwNtqXtvbE7RGmOqVWJd8RVcxBlBr",
+      ],
+    },
+    text1: "Conoce a la comunidad de mariachis más grande del mundo.",
+    textContrata:
+      "Contrata de manera rápida y segura el mariachi de tu confianza.",
+    textPago: "Formas de pago",
+    textLocation: "El mariachi más cercano a tu ubicación",
+  },
+  {
+    id: 30,
+    state: "Toluca",
+    slug: "toluca",
+    images: {
+      header:
+        "https://drive.google.com/uc?id=1JMO1Jv8vhZqufX6AJ9au91HPY33pSi1N",
+      content: [
+        "https://drive.google.com/uc?id=1_4KfQ0hkz38jbP8d-LRAwlRaIKxy9F3k",
+      ],
+    },
+    text1: "Conoce a la comunidad de mariachis más grande del mundo.",
+    textContrata:
+      "Contrata de manera rápida y segura el mariachi de tu confianza.",
+    textPago: "Formas de pago",
+    textLocation: "El mariachi más cercano a tu ubicación",
+  },
+  {
+    id: 31,
+    state: "Guadalajara",
+    slug: "guadalajara",
+    images: {
+      header:
+        "https://drive.google.com/uc?id=1MH4IckDwfVAHBBFXwovXjPXOHdOlNcvc",
+      content: [
+        "https://drive.google.com/uc?id=15nGbyXFLxEkXKueFiwckejzLrcSXOXwt",
+      ],
+    },
+    text1: "Conoce a la comunidad de mariachis más grande del mundo.",
+    textContrata:
+      "Contrata de manera rápida y segura el mariachi de tu confianza.",
+    textPago: "Formas de pago",
+    textLocation: "El mariachi más cercano a tu ubicación",
+  },
 ]
