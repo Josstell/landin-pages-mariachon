@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import Head from "next/head"
 import Image from "next/image"
 import Map from "@components/Maps/Map"
@@ -17,15 +16,6 @@ import { estados } from "@helpers/estados"
 // const imageSection = "1Hej2AAup_tbHCKfg16zq657s1-qKaDQ-"
 
 export default function Home({ stateArrayNames }) {
-  const size = useWindowSize()
-  let escalar = "scale(1)"
-
-  if (size.width < 800) {
-    escalar = "scale(.5)"
-  } else {
-    escalar = "scale(1)"
-  }
-
   // const imageInicio = ({ src }) => {
   //   return `https://drive.google.com/uc?id=${src}`
   // }
@@ -60,8 +50,9 @@ export default function Home({ stateArrayNames }) {
           <ButtonSass text="Informes" region={stateArrayNames.inicio} />
         </div>
       </main>
-      <div>
-        <Map regions={stateArrayNames} style={{ transform: `${escalar}` }} />
+
+      <div className="container-map">
+        <Map regions={stateArrayNames} />
       </div>
 
       <div className="text">
@@ -154,29 +145,29 @@ export async function getStaticProps() {
   }
 }
 
-// Hook
-function useWindowSize() {
-  // Initialize state with undefined width/height so server and client renders match
-  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  })
-  useEffect(() => {
-    // Handler to call on window resize
-    function handleResize() {
-      // Set window width/height to state
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
-    }
-    // Add event listener
-    window.addEventListener("resize", handleResize)
-    // Call handler right away so state gets updated with initial window size
-    handleResize()
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize)
-  }, []) // Empty array ensures that effect is only run on mount
-  return windowSize
-}
+// // Hook
+// function useWindowSize() {
+//   // Initialize state with undefined width/height so server and client renders match
+//   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+//   const [windowSize, setWindowSize] = useState({
+//     width: undefined,
+//     height: undefined,
+//   })
+//   useEffect(() => {
+//     // Handler to call on window resize
+//     function handleResize() {
+//       // Set window width/height to state
+//       setWindowSize({
+//         width: window.innerWidth,
+//         height: window.innerHeight,
+//       })
+//     }
+//     // Add event listener
+//     window.addEventListener("resize", handleResize)
+//     // Call handler right away so state gets updated with initial window size
+//     handleResize()
+//     // Remove event listener on cleanup
+//     return () => window.removeEventListener("resize", handleResize)
+//   }, []) // Empty array ensures that effect is only run on mount
+//   return windowSize
+// }
